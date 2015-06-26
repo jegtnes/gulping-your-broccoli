@@ -29,6 +29,12 @@
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
+		<style type="text/css" media="screen">
+		.faint-background .slide-background.present {
+			opacity: 0.5;
+		}
+		</style>
+
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
@@ -40,8 +46,24 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
 
+				<section data-background="img/nutria.jpg" data-state="faint-background">
+					<h1>Gulping your Broccoli</h1>
+					<h2>Advanced build tools optimisations<br />for fun and profit</h2>
+				</section>
+
+				<section>
+					<h1>Hello, world!</h1>
+					<h4>I can legitimately say that.</h4>
+					<h4> Online conferences are <em>cool</em>.</h4>
+					<p><small>(I'm so sorry if anyone's made that joke before.)</small></p>
+				</section>
+
+				<section>
+					<h1>Image credits</h1>
+					<ul>
+						<li><a href="https://www.flickr.com/photos/tambako/15100618690">Nutria eating broccoli II by Tambako The Jaguar on Flickr</a></li>
+					</ul>
 				</section>
 			</div>
 
@@ -55,8 +77,12 @@
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
-				progress: true,
+
+				width: 1280,
+				height: 721,
+
+				controls: false,
+				progress: false,
 				history: true,
 				center: true,
 
