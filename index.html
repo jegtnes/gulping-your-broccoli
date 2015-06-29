@@ -87,11 +87,34 @@ grunt.initConfig({
 					</code></pre>
 				</section>
 
+				<section data-background="img/gulp.jpg" data-state="faint-background">
+					<h1>Gulp</h1>
+					<ul>
+						<li class="fragment">The second-most popular front-end build tool</li>
+						<li class="fragment">Favours code over configuration</li>
+						<li class="fragment">Supports piping data from one task to the other, Node streams style</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Gulp code sample</h1>
+					<pre><code data-trim contenteditable>
+var concat = require('gulp-concat');
+
+gulp.task('scripts', function() {
+  return gulp.src(['src/main.js', 'src/shim.js'])
+    .pipe(concat('standalone.js'))
+    .pipe(gulp.dest('dist'));
+});
+					</code></pre>
+				</section>
+
 				<section>
 					<h1>Image credits</h1>
 					<ul>
 						<li><a href="https://www.flickr.com/photos/tambako/15100618690">Nutria eating broccoli II by Tambako The Jaguar on Flickr</a></li>
 						<li><a href="https://www.flickr.com/photos/nuskyn/5327424325">Piglets by nuskyn on Flickr</a></li>
+						<li><a href="https://www.flickr.com/photos/mac-ash/3628500632/">A Very Big Cup Of Water! by mac-ash on Flickr</a></li>
 					</ul>
 				</section>
 			</div>
