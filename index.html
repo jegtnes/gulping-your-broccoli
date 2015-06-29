@@ -60,9 +60,38 @@
 				</section>
 
 				<section>
+					<h1>A quick recap of various build tools</h1>
+				</section>
+
+				<section data-background="img/piglets.jpg" data-state="faint-background">
+					<h1>Grunt</h1>
+					<ul>
+						<li class="fragment">Arguably <em>the</em> most popular front-end build tool today</li>
+						<li class="fragment">Configuration over code</li>
+						<li class="fragment">No elegant way of passing data from one task to another</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Grunt code sample</h1>
+					<pre><code data-trim contenteditable>
+grunt.loadNpmTasks('grunt-contrib-concat');
+
+grunt.initConfig({
+  concat: {
+    files: {
+      'dist/standalone.js': ['src/main.js', 'src/shim.js'],
+    },
+  },
+});
+					</code></pre>
+				</section>
+
+				<section>
 					<h1>Image credits</h1>
 					<ul>
 						<li><a href="https://www.flickr.com/photos/tambako/15100618690">Nutria eating broccoli II by Tambako The Jaguar on Flickr</a></li>
+						<li><a href="https://www.flickr.com/photos/nuskyn/5327424325">Piglets by nuskyn on Flickr</a></li>
 					</ul>
 				</section>
 			</div>
