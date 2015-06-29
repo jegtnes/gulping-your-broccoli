@@ -109,12 +109,36 @@ gulp.task('scripts', function() {
 					</code></pre>
 				</section>
 
+				<section data-background="img/broccoli.jpg" data-state="faint-background">
+					<h1>Broccoli</h1>
+					<ul>
+						<li class="fragment">A recent contender in the build tools area</li>
+						<li class="fragment">Doesn't support piping, but is super quick thanks to 'trees'</li>
+						<li class="fragment">Fewer plugins, but can be run alongside Grunt or Gulp</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Broccoli code sample</h1>
+					<pre><code data-trim contenteditable>
+var concat = require('broccoli-concat');
+
+var concatenated = concat(sourceTree, {
+  inputFiles: [
+    'src/main.js', 'src/shim.js'
+  ],
+  outputFile: 'dist/standalone.js',
+});
+					</code></pre>
+				</section>
+
 				<section>
 					<h1>Image credits</h1>
 					<ul>
 						<li><a href="https://www.flickr.com/photos/tambako/15100618690">Nutria eating broccoli II by Tambako The Jaguar on Flickr</a></li>
 						<li><a href="https://www.flickr.com/photos/nuskyn/5327424325">Piglets by nuskyn on Flickr</a></li>
 						<li><a href="https://www.flickr.com/photos/mac-ash/3628500632/">A Very Big Cup Of Water! by mac-ash on Flickr</a></li>
+						<li><a href="https://www.flickr.com/photos/carolyncoles/2433266111/in/photostream/">Baby Borscht and Broccoli by carolyncoles on Flickr</a></li>
 					</ul>
 				</section>
 			</div>
