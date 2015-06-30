@@ -11,5 +11,6 @@ gulp.task('sass', function () {
     .on('error', function (err) {
         console.error('Error!', err.message);
     })
+    .pipe(plugins.autoprefixer())
     .pipe(gulp.dest('css'));
 });
