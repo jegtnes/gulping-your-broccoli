@@ -12,5 +12,11 @@ gulp.task('sass', function () {
         console.error('Error!', err.message);
     })
     .pipe(plugins.autoprefixer())
-    .pipe(gulp.dest('css'));
+    .pipe(gulp.dest('dist/css'));
 });
+
+gulp.task('js', function() {
+  return gulp.src(['js/vendor/jquery.js', 'js/vendor/foundation.js', 'js/vendor/**/*.js', 'js/**/*.js'])
+    .pipe(plugins.concat('app.js'))
+    .pipe(gulp.dest('./dist/js/'))
+})
