@@ -10,6 +10,10 @@
     "node": "~0.10.0"
   },
   "devDependencies": {
+    "broccoli": "^0.16.3",
+    "broccoli-concat": "0.0.13",
+    "broccoli-merge-trees": "^0.2.1",
+    "broccoli-sass": "^0.6.6",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-concat": "^2.6.0",
