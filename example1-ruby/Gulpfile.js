@@ -16,7 +16,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('js', function() {
-  return gulp.src(['js/vendor/jquery.js', 'js/vendor/foundation.js', 'js/vendor/**/*.js', 'js/**/*.js'])
+  return gulp.src(['js/vendor/jquery.js', 'js/vendor/jquery.cookie.js', 'js/vendor/modernizr.js', 'js/vendor/placeholder.js', 'js/vendor/foundation.js', 'js/vendor/**/*.js', 'js/**/*.js'])
     .pipe(plugins.concat('app.js'))
     .pipe(gulp.dest('./dist/js/'))
 })
