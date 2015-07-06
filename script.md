@@ -17,7 +17,7 @@ When you write automate your setup with Grunt, you'll notice it favours configur
 ## Gulp
 Gulp is the second most popular front-end build tool, which, like Grunt, has an astonishing amount of plugins available for it, which isn't bad for only having been out for two years. There are two main differences between Gulp and Grunt, though:
 
-The first being that Gulp supports piping data from one plugin to another in the same task, which means you won't have to save temporary files to disk if more than one plugin is dealing with the same file. This leads to great benefits both for both readability and for speed.
+The first being that Gulp supports streaming data from one plugin to another in the same task, which means you won't have to save temporary files to disk if more than one plugin is dealing with the same file. This leads to great benefits both for both readability and for speed.
 
 Secondly, it favours code over configuration, which you can see in the following code snippet:
 
@@ -29,3 +29,23 @@ Broccoli is a fairly new contender in the build tools space, and is like Grunt i
 It has significantly fewer plugins than the two previously mentioned tools, but that's also for a good reason. I'll explain that in a minute, but first, let's have a look at a sample Brocoli file.
 
 *explain thing*
+
+So, I mentioned it has way fewer plugins than Grunt and Gulp: This is due to a couple of things: Firstly, it's very new, but also, it was conceived as a _pure_ build tool, whereas Grunt and Gulp are considered more in the realm of task runners.
+
+If you're familiar with, say, Rails, Broccoli could be considered roughly the equivalent of the asset pipeline, which has the sole job of compiling, concatenating, processing, and minifying all your assets.
+
+Grunt and Gulp are a bit more than Rake. They can run the asset pipeline, but they also take care of the myriad of other things that's involved with building a modern site these days, like deployment, setup, scaffolding, etc.
+
+The creator of Broccoli said it's not a replacement for things like Grunt, and to prove this point, you can run Broccoli as a Grunt task. It was created out of a very common complaint: Build tools far too often get in the way of devs by being too convoluted and too slow, and Broccoli aims to address that. My last project had a massively complex Grunt setup that took seven seconds to compile your Sass. Now that doesn't sound like a lot, but if you save your stylesheet and have to wait seven seconds to see the results, that adds up of a lot of time wasted over the course of a project, especially if you're like me, and have the attention span of a squirrel on cocaine.
+
+"Ooooh, it's compiling. This means I can tab over to Twitter while it compiles" and then twenty minutes later you realised you were actually working on a project instead of looking at cute kittens and pointless internet arguments for a living.
+
+Unfortunately.
+
+Broccoli aims to get rid of some of this slowness by using an abstraction called 'trees', which basically means you work off folders instead of files, or arrays of files. This doesn't make a massive difference in tasks where you pass in one file and one file comes back out, like, say, CoffeeScript, but can speed things up hugely on projects where you have a many-to-one compilation like Sass, where you can import hundreds of small partials in one large file. I'm not smart enough to understand exactly why, but it means plugins can cache their output in a smarter way, as plugins can return the majority of their builds from caches.
+
+In the upcoming demos, I'll be showing you this, and also its pitfalls. What we're going to cover is:
+- Broccoli, to massively reduce the compilation time of your projects
+- BrowserSync, to sync the state of your site across devices for much quicker testing, and to inject your new CSS right into your site without having to reload
+- Automatically generating responsive images
+- Generating inline CSS for huge performance boosts
