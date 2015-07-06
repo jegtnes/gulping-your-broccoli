@@ -13,3 +13,12 @@ One of my main bugbears with Grunt, however, is that there's no elegant way of p
 When you write automate your setup with Grunt, you'll notice it favours configuration over code. I have very simple example of what a Grunt setup looks like:
 
 *explain thing*
+
+## Gulp
+Gulp is the second most popular front-end build tool, which, like Grunt, has an astonishing amount of plugins available for it, which isn't bad for only having been out for two years. There are two main differences between Gulp and Grunt, though:
+
+The first being that Gulp supports piping data from one plugin to another in the same task, which means you won't have to save temporary files to disk if more than one plugin is dealing with the same file. This leads to great benefits both for both readability and for speed.
+
+Secondly, it favours code over configuration, which you can see in the following code snippet:
+
+*explain thing*
