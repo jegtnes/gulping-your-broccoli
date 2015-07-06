@@ -2,14 +2,24 @@ var gulp = require('gulp');
 var gulpLoadPlugins = require('gulp-load-plugins');
 var plugins = gulpLoadPlugins({
   rename: {
-    'gulp-ruby-sass': 'sass'
+    'gulp-ruby-sass': 'rubysass'
   }
 });
 
-gulp.task('sass', function () {
-  return plugins.sass('scss')
-    .on('error', function (err) {
-        console.error('Error!', err.message);
+gulp.task('rubysass', function() {
+  return plugins.rubysass('scss/app.scss')
+    .on('error', function(err) {
+      console.error('Error!', err.message);
+    })
+    .pipe(plugins.autoprefixer())
+    .pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('libsass', function() {
+  gulp.src('scss/app.scss')
+    .pipe(plugins.sass().on('error', plugins.sass.logError))
+    .on('error', function(err) {
+      console.error('Error!', err.message);
     })
     .pipe(plugins.autoprefixer())
     .pipe(gulp.dest('dist/css'));
