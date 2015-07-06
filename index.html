@@ -114,7 +114,7 @@ gulp.task('scripts', function() {
 					<ul>
 						<li class="fragment">A recent contender in the build tools area</li>
 						<li class="fragment">Doesn't support piping, but is super quick thanks to 'trees'</li>
-						<li class="fragment">Fewer plugins, but can be run alongside Grunt or Gulp</li>
+						<li class="fragment">Fewer plugins than Grunt/Gulp</li>
 					</ul>
 				</section>
 
@@ -129,7 +129,22 @@ var concatenated = concat(sourceTree, {
   ],
   outputFile: 'dist/standalone.js',
 });
+
+module.exports = concatenated;
 					</code></pre>
+				</section>
+
+				<section>
+					<h1>So what sets Broccoli apart?</h1>
+				</section>
+
+				<section>
+					<h1>Purely a build tool, not a task runner</h1>
+				</section>
+
+				<section>
+					<h1>A Rails parable:</h1>
+					<h2>Broccoli = asset pipeline; Grunt = rake</h2>
 				</section>
 
 				<section>
