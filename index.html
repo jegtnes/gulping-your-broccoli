@@ -75,15 +75,15 @@
 				<section>
 					<h1>Grunt code sample</h1>
 <pre><code data-trim contenteditable>module.exports = function(grunt) {
-grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 
-grunt.initConfig({
-  concat: {
-    files: {
-      'dist/standalone.js': ['src/main.js', 'src/shim.js'],
+  grunt.initConfig({
+    concat: {
+      files: {
+        'dist/standalone.js': ['src/main.js', 'src/shim.js'],
+      },
     },
-  },
-});
+  });
 }</code></pre>
 				</section>
 
