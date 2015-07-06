@@ -4,3 +4,12 @@ I'm really glad to be here today—and I'd like to apologise in advance: Last Fr
 As I know there is a mixed skillset in attendance here today, this session will start off with a very quick comparison of the various build tools out there and their strengths and weaknesses, before diving into more advanced examples of what you can actually do with them that isn't just your average every-day "Compile your Sass and minify your stuff". Although I'll cover that too!
 
 So let's get this started!
+
+## Grunt
+Grunt is the most popular front-end build tool out there today, and it's also one of the first JS build that really existed. These two things are possibly related. It got a lot of traction, and hence, it has a plugin for just about everything under the sun. Which is great, especially as your application grows in complexity.
+
+One of my main bugbears with Grunt, however, is that there's no elegant way of passing data from one task to another task. Each task will generally take in a file and spit out a file, which means that, say, if you have some Handlebars templates that you want to convert to HTML and minify them, you need two tasks to operate on the same file, you can't easily combine them into a single task. So the handlebars conversion will first open the template, process it, and save a file to disk. Then the minification task needs to open the saved file, process it, and save the file again. Now, with most computers these days having an SSD, it's not as slow as it could be, but I find it makes for more convoluted setups and slightly slower build times.
+
+When you write automate your setup with Grunt, you'll notice it favours configuration over code. I have very simple example of what a Grunt setup looks like:
+
+*explain thing*
