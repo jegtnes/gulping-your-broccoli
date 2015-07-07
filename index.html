@@ -109,27 +109,6 @@ gulp.task('scripts', function() {
 					</code></pre>
 				</section>
 
-				<section data-state="faint-background" data-background="img/gulp.jpg">
-					<h1>Gulp</h1>
-					<ul>
-						<li>Second most popular front-end build tool</li>
-						<li>Pass data through tasks via streaming (piping)</li>
-						<li>Code over configuration</li>
-					</ul>
-				</section>
-
-				<section>
-					<h1>Gulp code sample</h1>
-<pre><code data-trim contenteditable>var gulp = require('gulp');
-var concat = require('gulp-concat');
-
-gulp.task('scripts', function() {
-  return gulp.src(['src/main.js', 'src/shim.js'])
-    .pipe(concat('standalone.js'))
-    .pipe(gulp.dest('dist'));
-});
-				</section>
-
 				<section data-background="img/broccoli.jpg" data-state="faint-background">
 					<h1>Broccoli</h1>
 					<ul>
@@ -141,8 +120,7 @@ gulp.task('scripts', function() {
 
 				<section>
 					<h1>Broccoli code sample</h1>
-					<pre><code data-trim contenteditable>
-var concat = require('broccoli-concat');
+					<pre><code data-trim contenteditable>var concat = require('broccoli-concat');
 
 var concatenated = concat(sourceTree, {
   inputFiles: [
@@ -152,7 +130,7 @@ var concatenated = concat(sourceTree, {
 });
 
 module.exports = concatenated;
-					</code></pre>
+</code></pre>
 				</section>
 
 				<section>
