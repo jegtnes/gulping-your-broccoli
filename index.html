@@ -162,6 +162,7 @@ module.exports = concatenated;
 				</section>
 
 				<section>
+					<h1>Super Scientific Data (not)</h1>
 					<table>
 						<thead>
 							<tr>
@@ -189,6 +190,41 @@ module.exports = concatenated;
 								<td>6970ms</td>
 								<td>2980ms</td>
 								<td>2210ms</td>
+							</tr>
+							<tr></tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<h1>Difference to Broccoli</h1>
+					<table>
+						<thead>
+							<tr>
+								<th></th>
+								<th>Gulp: Sass</th>
+								<th>Gulp: Libsass</th>
+								<th>Broccoli: Libsass</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Initial compile</th>
+								<td>+5790ms</td>
+								<td>+1130ms</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<th>Changed partial</th>
+								<td>+5280ms</td>
+								<td>+660ms</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<th>Changed main file</th>
+								<td>+4760ms</td>
+								<td>+770ms</td>
+								<td>0</td>
 							</tr>
 							<tr></tr>
 						</tbody>
