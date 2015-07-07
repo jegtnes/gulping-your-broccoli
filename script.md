@@ -42,7 +42,7 @@ It was created out of a very common complaint: Build tools far too often get in 
 
 Unfortunately.
 
-Broccoli aims to get rid of some of this slowness by using an abstraction called 'trees', which basically means you work off folders instead of files, or arrays of files. This doesn't make a massive difference in tasks where you pass in one file and one file comes back out, like, say, CoffeeScript, but can speed things up hugely on projects where you have a many-to-one compilation like Sass, where you can import hundreds of small partials in one large file. I'm not smart enough to understand exactly why, but it means plugins can cache their output in a smarter way, as plugins can return the majority of their builds from caches.
+Broccoli aims to get rid of some of this slowness by using an abstraction called 'trees', which basically means you work off folders instead of files, or arrays of files. This doesn't make a massive difference in tasks where you pass in one file and one file comes back out, like, say, CoffeeScript, but can speed things up on projects where you have a many-to-one compilation like Sass, where you can import hundreds of small partials in one large file. I'm not smart enough to understand exactly why, but it means plugins can cache their output in a smarter way, as plugins can return the majority of their builds from caches.
 
 In the upcoming demos, I'll be showing you this, and also its pitfalls. What we're going to cover is:
 - Broccoli, to massively reduce the compilation time of your projects
