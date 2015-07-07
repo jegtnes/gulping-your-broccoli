@@ -49,3 +49,9 @@ In the upcoming demos, I'll be showing you this, and also its pitfalls. What we'
 - BrowserSync, to sync the state of your site across devices for much quicker testing, and to inject your new CSS right into your site without having to reload
 - Automatically generating responsive images
 - Generating inline CSS for huge performance boosts
+
+Right, so first off: Broccoli. I've conducted a benchmark test on a pre-existing project we've built here at cxpartners. How this will work is: I run three watch tasks at the same time, comparing the original version of Sass, Ruby Sass, a new version of Sass built with C, known as Libsass, built with Gulp. Alongside this I'm also running a Broccoli watch tasks (also using Libsass).
+
+There are a couple of things you need to understand about Broccoli before we get started. With Broccoli, you can either 'build' a project, basically compiling all your assets once when you run it, or 'serve' a project, which is like any other watch task: It checks your file system for changes and compiles the relevant assets every time a source file has changed. Broccoli's watching doesn't write the files to your local file system like Grunt or Gulp, but instead, spins up a local server. So let's just show you that first:
+
+_show off Brocfile_
