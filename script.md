@@ -50,8 +50,12 @@ In the upcoming demos, I'll be showing you this, and also its pitfalls. What we'
 - Automatically generating responsive images
 - Generating inline CSS for huge performance boosts
 
-Right, so first off: Broccoli. I've conducted a benchmark test on a pre-existing project we've built here at cxpartners. How this will work is: I run three watch tasks at the same time, comparing the original version of Sass, Ruby Sass, a new version of Sass built with C, known as Libsass, built with Gulp. Alongside this I'm also running a Broccoli watch tasks (also using Libsass).
-
-There are a couple of things you need to understand about Broccoli before we get started. With Broccoli, you can either 'build' a project, basically compiling all your assets once when you run it, or 'serve' a project, which is like any other watch task: It checks your file system for changes and compiles the relevant assets every time a source file has changed. Broccoli's watching doesn't write the files to your local file system like Grunt or Gulp, but instead, spins up a local server. So let's just show you that first:
+Right, so first off: Broccoli. There are a couple of things you need to understand about Broccoli before we get started. With Broccoli, you can either 'build' a project, basically compiling all your assets once when you run it, or 'serve' a project, which is like any other watch task: It checks your file system for changes and compiles the relevant assets every time a source file has changed. Broccoli's watching doesn't write the files to your local file system like Grunt or Gulp, but instead, spins up a local server. So let's just show you that first:
 
 _show off Brocfile_
+
+Okay, so that's Broccoli, and it's pretty damn fast. I've conducted a benchmark test on a pre-existing project we've built here at cxpartners. How this will work is: I run three watch tasks at the same time, comparing the original version of Sass, Ruby Sass, a new version of Sass built with C, known as Libsass, built with Gulp. Alongside this I'm also running a Broccoli watch tasks (also using Libsass).
+
+For the most accurate timing I'd rely on the native implementations of Gulp to report how long it took to execute a task. Unfortunately, Gulp Libsass reports the time it takes to call this task asynchronously, instead of how long it actually takes to finish, which is what Broccoli Libsass and Gulp Rubysass reports. So to benchmark this, I'm going to keep open two text editor windows for the Gulp tasks and see how quickly they update, alongside Broccoli. So the top window here is Libsass, the bottom window is Rubysass.
+
+_explain video and stats_
