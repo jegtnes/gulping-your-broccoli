@@ -1,7 +1,7 @@
 .DS_Store
 .svn
 log/*.log
-tmp/**
+**/tmp/
 node_modules/
 .sass-cache
 css/reveal.min.css
