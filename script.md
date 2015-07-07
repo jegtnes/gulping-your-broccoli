@@ -59,3 +59,13 @@ Okay, so that's Broccoli, and it's pretty damn fast. I've conducted a benchmark 
 For the most accurate timing I'd rely on the native implementations of Gulp to report how long it took to execute a task. Unfortunately, Gulp Libsass reports the time it takes to call this task asynchronously, instead of how long it actually takes to finish, which is what Broccoli Libsass and Gulp Rubysass reports. So to benchmark this, I'm going to keep open two text editor windows for the Gulp tasks and see how quickly they update, alongside Broccoli. So the top window here is Libsass, the bottom window is Rubysass.
 
 _explain video and stats_
+
+Judging from these results, Broccoli might look like the bee's knees, right? But of course, like everything else in life, there are caveats.
+
+First of all: Make sure it works with your current setup. Broccoli won't necessarily fit into everyone's workflows. Windows support isn't quite there yet, and it can't necessarily replace your entire existing build set up. I'll get onto this in a second.
+
+As well, benchmark, benchmark, benchmark. For whatever reason, Broccoli might not be a panacea. The difference of switching from the slower version of Ruby Sass to the faster version of Libsass is much bigger than switching from Gulp to Broccoli. Libsass used to lack certain features that Ruby had, and @extends support used to be quite buggy, but they're basically at 99% parity now. Unless you're doing _really_ weird shit with Sass, and unless you're using a Ruby library like Compass, you should be okay to switch to Libsass for now.
+
+But of course, it's also worth testing Broccoli in case you find it is worth switching, and potentially running it alongside Grunt. Fortunately, just testing it for Sass is literally two lines of code, so you should be able to make a comparison quickly.
+
+However, the rest of the examples today won't be making use of Broccoli: For one thing, I'd like to keep things simple to focus on the _things_ you can do with build tools instead of the tools themselves, and for another thing, my second demo is of BrowserSync, a tool that will sync the state of your devices across many different devices at once, which is great for intensive device testing. As well, it will also automatically inject your new CSS into the page without you having to manually reload the page. If you have this set up, with multiple monitors and a fast compile time, it can really take your productivity to the next level. However, unfortunately, there's no way currently of integrating Broccoli and BrowserSync. This is where Broccoli's relative immaturity is at a disadvantage.
