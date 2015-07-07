@@ -6521,8 +6521,6 @@ function a(b,d){function e(a,b){return function(){return a.apply(b,arguments)}}v
   };
 }(jQuery, window, window.document));
 
-console.log('what!');
-alert('omg hi');
 $(document).on('ready', function() {
   $(document).foundation();
 });

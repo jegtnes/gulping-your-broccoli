@@ -10,7 +10,6 @@ gulp.task('js', function() {
     .pipe(gulp.dest('./dist/js/'))
 })
 
-
 gulp.task('sass', function () {
   gulp.src('./scss/**.*scss')
     .pipe(sass().on('error', sass.logError))
@@ -27,7 +26,7 @@ gulp.task('serve', ['sass'], function() {
   });
 
   gulp.watch("scss/**/*.scss", ['sass']);
-  gulp.watch("dist/js/**.*.js", ['js'])
+  gulp.watch("js/**/*.js", ['js'])
     .on('change', browserSync.reload)
   gulp.watch("./*.html")
     .on('change', browserSync.reload);
