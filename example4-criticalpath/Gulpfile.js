@@ -4,6 +4,7 @@ var concat = require('gulp-concat');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 
+var runSequence = require('run-sequence');
 var critical = require('critical');
 var smoosher = require('gulp-smoosher');
 var rename = require('gulp-rename');
@@ -39,15 +40,14 @@ gulp.task('serve', ['sass'], function() {
 
 gulp.task('criticalCSS', function(cb) {
   fs.writeFile('dist/css/inline.css', '');
-  critical.generate({
+  return critical.generate({
     base: './',
-    src: 'index.html',
+    src: './index.html',
     dest: 'dist/css/inline.css',
     minify: true,
     width: 1280,
     height: 800
   })
-  cb();
 })
 
 gulp.task('inlineCriticalCSS', function() {
@@ -57,4 +57,6 @@ gulp.task('inlineCriticalCSS', function() {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('inline', ['criticalCSS', 'inlineCriticalCSS'])
+gulp.task('inline', function(cb) {
+  runSequence('criticalCSS', 'inlineCriticalCSS', cb);
+});

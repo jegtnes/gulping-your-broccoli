@@ -18,7 +18,8 @@
     "gulp-concat": "^2.6.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "*",
-    "gulp-smoosher": "0.0.7"
+    "gulp-smoosher": "0.0.7",
+    "run-sequence": "^1.1.1"
   },
   "license": "MIT"
 }
