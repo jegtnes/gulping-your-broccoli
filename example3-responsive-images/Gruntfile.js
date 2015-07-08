@@ -24,6 +24,7 @@ module.exports = function(grunt) {
     responsive_images: {
       myTask: {
         options: {
+          newFilesOnly: true,
           sizes: [{
             name: 'small',
             width: 320
