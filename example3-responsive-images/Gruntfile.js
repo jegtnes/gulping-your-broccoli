@@ -55,7 +55,7 @@ module.exports = function(grunt) {
           dest: 'dist/html'
         }]
       }
-    }
+    },
   });
 
   grunt.task.registerTask('images', ['copy', 'responsive_images_extender', 'responsive_images'])

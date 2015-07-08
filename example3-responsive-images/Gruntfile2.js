@@ -1,3 +1,5 @@
+var mozjpeg = require('imagemin-mozjpeg');
+
 module.exports = function(grunt) {
 
   grunt.initConfig({
@@ -49,7 +51,7 @@ module.exports = function(grunt) {
       target: {
         options: {
           sizes: [{
-            selector: '.small-block-grid-1.medium-block-grid-2.large-block-grid-3',
+            selector: '.small-block-grid-1.medium-block-grid-2.large-block-grid-3 img.th',
             sizeList: [{
               cond: 'max-width: 40em',
               size: '100vw'
@@ -71,14 +73,28 @@ module.exports = function(grunt) {
           dest: 'dist/html'
         }]
       }
+    },
+
+    imagemin: {
+      dynamic: {
+        options: {
+          use: [mozjpeg()]
+        },
+        expand: true,
+        cwd: 'dist/img',
+        src: ['**/*.{png,jpg,gif}'],
+        dest: 'dist/img'
+      }
     }
   });
 
-  grunt.task.registerTask('images', ['copy', 'responsive_images_extender', 'responsive_images'])
+  grunt.task.registerTask('images', ['copy', 'responsive_images_extender', 'responsive_images', 'newer:imagemin'])
 
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-responsive-images');
   grunt.loadNpmTasks('grunt-responsive-images-extender');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-contrib-copy');
 
 };
