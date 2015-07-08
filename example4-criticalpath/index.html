@@ -4,13 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundation project</title>
-    <link rel="stylesheet" href="/dist/css/app.css">
 
+    <!-- The following assets will be inlined after running the Gulp inline task-->
     <!-- smoosh -->
+    <script src="js/vendor/loadCSS.js"></script>
     <link rel='stylesheet' href='dist/css/inline.css'>
     <!-- endsmoosh -->
 
+    <!-- Load main CSS asynchronously -->
+    <script>
+      loadCSS('/dist/css/app.css');
+    </script>
     <script src="js/vendor/fastclick.js"></script>
+    <!-- no-js, synchronous, render-blocking fallback for main CSS file -->
+    <noscript>
+      <link rel="stylesheet" href="/dist/css/app.css">
+    </noscript>
+
     <script defer src="dist/js/app.js"></script>
   </head>
   <body>
